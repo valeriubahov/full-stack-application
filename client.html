@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaceships</title>
+    <script src="ships.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <button class="accordion active">
+        <h1>SPACESHIPS</h1>
+    </button>
+    <div id="shipView" class="panel">
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th>Ship</th>
+                        <th>Weapon</th>
+                        <th>Shield</th>
+                        <th>Power Plant</th>
+                        <th>Engine</th>
+                        <th>Cooler</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div id="ships" class="tbl-content"></div>
+        <form id="newShip">
+            <div class="tbl-content-form">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" name="ship" id="ship">
+                            </td>
+                            <td>
+                                <select class="weapon" name="weapon"></select>
+                            </td>
+                            <td>
+                                <select class="shield" name="shield"></select>
+                            </td>
+                            <td>
+                                <select class="pplant" name="pplant"></select>
+                            </td>
+                            <td>
+                                <select class="engine" name="engine"></select>
+                            </td>
+                            <td>
+                                <select class="cooler" name="cooler"></select>
+                            </td>
+                            <td>
+                                <button id="btnUpdateShip"><i class="fas fa-wrench"></i></button>
+                            </td>
+                            <td class="buttonHover">
+                                <button type="submit" value="Submit" id="btnNewShip"><i
+                                        class="far fa-plus-square"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+
+    <div class="itemView">
+        <div>
+            <button class="accordion active">
+                <h1>WEAPONS</h1>
+            </button>
+            <div class="panel">
+                <div class="tbl-header-half">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Size</th>
+                                <th>Grade</th>
+                                <th>Damage</th>
+                                <th>Cost</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div id="weapons" class="tbl-content-half"></div>
+                <form id="newWeapon">
+                    <div class="tbl-content-form">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="weapName" id="weapName">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="weapSize" id="weapSize">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="weapGrade" id="weapGrade">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="weapDamage" id="weapDamage">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="weapCost" id="weapCost">
+                                    </td>
+                                    <td>
+                                        <button id="btnUpdateWeap"><i class="fas fa-wrench"></i></button>
+                                    </td>
+                                    <td class="buttonHover">
+                                        <button type="submit" value="Submit" id="btnNewWeap"><i
+                                                class="far fa-plus-square"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div>
+            <button class="accordion active">
+                <h1>SHIELDS</h1>
+            </button>
+            <div class="panel">
+                <div class="tbl-header-half">
+
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Size</th>
+                                <th>Grade</th>
+                                <th>HP</th>
+                                <th>Cost</th>
+                                <th>Emission</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div id="shields" class="tbl-content-half"></div>
+                <form id="newShield">
+                    <div class="tbl-content-form">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="shieldName" id="shieldName">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="shieldSize" id="shieldSize">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="shieldGrade" id="shieldGrade">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="shieldHP" id="shieldHP">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="shieldCost" id="shieldCost">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="shieldEmission" id="shieldEmission">
+                                    </td>
+                                    <td><button id="btnUpdateShield"><i class="fas fa-wrench"></i></button></td>
+                                    <td class="buttonHover">
+                                        <button type="submit" value="Submit" id="btnNewShield"><i
+                                                class="far fa-plus-square"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <button class="accordion active">
+        <h1>POWER PLANTS</h1>
+    </button>
+    <div class="panel">
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Size</th>
+                        <th>Grade</th>
+                        <th>Power Draw</th>
+                        <th>Cost</th>
+                        <th>Emission</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div id="power" class="tbl-content"></div>
+        <form id="newPower">
+            <div class="tbl-content-form">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" name="powerName" id="powerName">
+                            </td>
+                            <td>
+                                <input type="text" name="powerSize" id="powerSize">
+                            </td>
+                            <td>
+                                <input type="text" name="powerGrade" id="powerGrade">
+                            </td>
+                            <td>
+                                <input type="text" name="powerDraw" id="powerDraw">
+                            </td>
+                            <td>
+                                <input type="text" name="powerCost" id="powerCost">
+                            </td>
+                            <td>
+                                <input type="text" name="powerEmission" id="powerEmission">
+                            </td>
+                            <td><button id="btnUpdatePower"><i class="fas fa-wrench"></i></button></td>
+                            <td class="buttonHover">
+                                <button type="submit" value="Submit" id="btnNewPower"><i
+                                        class="far fa-plus-square"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <div class="itemView">
+        <div>
+            <button class="accordion active">
+                <h1>COOLERS</h1>
+            </button>
+            <div class="panel">
+                <div class="tbl-header-half">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Size</th>
+                                <th>Grade</th>
+                                <th>Power</th>
+                                <th>Cost</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div id="coolers" class="tbl-content-half"></div>
+                <form id="newCooler">
+                    <div class="tbl-content-form">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="coolName" id="coolerName">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="coolSize" id="coolerSize">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="coolGrade" id="coolerGrade">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="coolPower" id="coolerPower">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="coolCost" id="coolerCost">
+                                    </td>
+                                    <td><button id="btnUpdateCooler"><i class="fas fa-wrench"></i></button></td>
+                                    <td class="buttonHover">
+                                        <button id="btnNewCooler"><i class="far fa-plus-square"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div>
+            <button class="accordion active">
+                <h1>ENGINES</h1>
+            </button>
+            <div class="panel">
+                <div class="tbl-header-half">
+
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Size</th>
+                                <th>Speed</th>
+                                <th>Cost</th>
+                                <th>Consume</th>
+                                <th>Emission</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div id="engines" class="tbl-content-half"></div>
+                <form id="newEngine">
+                    <div class="tbl-content-form">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="engineName" id="engineName">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="engineSize" id="engineSize">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="engineSpeed" id="engineSpeed">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="engineCost" id="engineCost">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="enginePowerCons" id="enginePowerCons">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="engineEmission" id="engineEmission">
+                                    </td>
+                                    <td><button id="btnUpdateEngine"><i class="fas fa-wrench"></i></button></td>
+                                    <td class="buttonHover">
+                                        <button id="btnNewEngine"><i class="far fa-plus-square"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
